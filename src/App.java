@@ -1,12 +1,10 @@
 import controllers.MetodosBusqueda;
+import controllers.MetodosBusquedaBinaria;
 import models.Person;
-import views.ShowConsole;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        
         Person[] personas = new Person[7];
-
         personas[0] = new Person(101, "Juan");
         personas[1] = new Person(102, "Maria");
         personas[2] = new Person(103, "Carlos");
@@ -15,13 +13,16 @@ public class App {
         personas[5] = new Person(106, "Sofia");
         personas[6] = new Person(107, "Pedro");
         MetodosBusqueda mB = new MetodosBusqueda(personas);
+        MetodosBusquedaBinaria mBB = new MetodosBusquedaBinaria(personas);
 
-        // int[] arreglo = {1, 2, 3, 4, 5};
-        // int elemento = 3;
+        System.out.println("Metodo de busqueda Lineal  - Code");
+        mB.showPersonByCode();
+        
 
-        // int valor = mB.busquedaLineal(arreglo, elemento);
-        // System.out.println("La posicion del elemento " + elemento + " es : " + valor);
+        System.out.println("\nMetodo de busqueda Binaria  - Code");
+        mBB.showPersonByCode();
 
-
+        System.out.println("\nMetodo de busqueda Binaria  - Name");
+        mBB.showPersonByName();
     }
 }

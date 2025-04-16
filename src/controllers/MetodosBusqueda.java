@@ -9,19 +9,9 @@ public class MetodosBusqueda {
     private Person[] people;
 
     public MetodosBusqueda(Person[] persons){
-        showConsole = new ShowConsole();
+        this.showConsole = new ShowConsole();
         this.people = persons;
-        showPersonByCode();
     }
-
-    // public int busquedaLineal(int[] arreglo, int elemento) {
-    //     for (int i = 0; i < arreglo.length; i++) {
-    //         if (arreglo[i] == elemento) {
-    //             return i;
-    //         }
-    //     }
-    //     return -1;
-    // }
 
     public int findPersonByCode(int code){
         for (int i = 0; i < people.length; i++) {
@@ -34,12 +24,13 @@ public class MetodosBusqueda {
 
     public void showPersonByCode(){
         int codeToFind = showConsole.getCode();
-        int indexPerson =  findPersonByCode(codeToFind);
-        if (indexPerson >= 0 ) {
-            showConsole.showMessage("Persona encontrada");
+        int indexPerson = findPersonByCode(codeToFind);
+
+        if (indexPerson >= 0) {
+            showConsole.showMessage("Persona encontrada:");
             showConsole.showMessage(people[indexPerson].toString());
-        }else{
-            showConsole.showMessage("Persona codigio " + codeToFind + "no encontrada");
+        } else {
+            showConsole.showMessage("Persona con código " + codeToFind + " no encontrada.");
         }
     }
 }

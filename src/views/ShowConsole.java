@@ -7,14 +7,27 @@ public class ShowConsole {
     private Scanner sc = new Scanner(System.in);
 
     public void showMenu(){
-        System.out.println("Metodo Busqueda");
+        System.out.println("Método de Búsqueda");
     }
 
     public int getCode(){
-        System.out.print("Ingrese el codigo: ");
+        System.out.print("Ingrese el código: ");
+        while (!sc.hasNextInt()) {
+            System.out.println("Código inválido. Intente de nuevo:");
+            sc.next();
+        }
         int codigo = sc.nextInt();
-        System.out.println("Codigo ingresado es: " + codigo);
         return codigo;
+    }
+
+    public String getName(){
+        System.out.print("Ingrese el nombre: ");
+        while (!sc.hasNext()) {
+            System.out.println("Código inválido. Intente de nuevo:");
+            sc.next();
+        }
+        String name = sc.next();
+        return name;
     }
 
     public void showMessage(String message){
